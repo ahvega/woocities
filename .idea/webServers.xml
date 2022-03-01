@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="59befcff-9e52-43f7-8cc3-ed944ddbfc10" name="NC" url="http://nazarconsultores.net/tcb">
+        <fileTransfer rootFolder="/public_html/tcb/wp-content/plugins/woocities" host="nazarconsultores.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
