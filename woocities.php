@@ -1,5 +1,4 @@
 <?php
-
 /*
 Plugin Name: WooCities
 Plugin URI: https://ncdigital.net
@@ -110,7 +109,6 @@ function ahv_woocities_config_page()
     </div>
     <?php
 }
-
 
 /**
  * Change the checkout city field to a dropdown field.
