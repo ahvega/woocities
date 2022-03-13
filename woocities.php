@@ -31,12 +31,11 @@ function ahv_woocities_config_page()
 {
     global $woocities_enabled, $woocities_cities, $woocities_billing;
 
-    $woocities_enabled = get_option('ahv_woocities_enabled', 'No');
-    $woocities_cities = get_option('ahv_woocities_cities', 'none');
-    $woocities_billing = get_option('ahv_woocities_billing', 'No');
-
-    $woocities_enabled_checked = trim($woocities_enabled) === 'Yes' ? 'checked' : 'class';
-    $woocities_billing_checked = trim($woocities_billing) === 'Yes' ? 'checked' : 'class';
+    $woocities_enabled         = get_option('ahv_woocities_enabled', 'No');
+    $woocities_cities          = get_option('ahv_woocities_cities', 'none');
+    $woocities_billing         = get_option('ahv_woocities_billing', 'No');
+    $woocities_enabled_checked = trim($woocities_enabled) == = 'Yes' ? 'checked' : 'class';
+    $woocities_billing_checked = trim($woocities_billing) == = 'Yes' ? 'checked' : 'class';
 
     if (array_key_exists('submit', $_POST)) {
         update_option('ahv_woocities_cities', $_POST['woocities_cities']);
@@ -66,7 +65,6 @@ function ahv_woocities_config_page()
         <form method="post" action="">
             <fieldset id="woocities" name="woocities"
                       style="display: block;
-                      margin-inside: 2px;
                       margin-right: 2px;
                       padding: 0.35em 0.75em 0.625em;
                       border: 1px solid #202020;">
@@ -117,19 +115,21 @@ function ahv_woocities_config_page()
  */
 function ahv_woocities_change_fields($fields)
 {
-    $woocities_cities = get_option('ahv_woocities_cities', 'none');
+    $woocities_cities  = get_option('ahv_woocities_cities', 'none');
     $woocities_billing = get_option('ahv_woocities_billing', 'No');
+    $city_name         = explode(',', $woocities_cities);
 
-    $city_name = explode(',', $woocities_cities);
     asort($city_name);
+
     $city_options = array();
+
     foreach ($city_name as $city) {
-        $city = trim($city);
+                      $city  = trim($city);
         $city_options[$city] = $city;
     }
 
     $city_args = wp_parse_args(array(
-            'type' => 'select',
+            'type'    => 'select',
             'options' => $city_options,
     ), $fields['shipping']['shipping_city']);
 
