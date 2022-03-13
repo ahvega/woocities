@@ -34,8 +34,8 @@ function ahv_woocities_config_page()
     $woocities_enabled         = get_option('ahv_woocities_enabled', 'No');
     $woocities_cities          = get_option('ahv_woocities_cities', 'none');
     $woocities_billing         = get_option('ahv_woocities_billing', 'No');
-    $woocities_enabled_checked = trim($woocities_enabled) == = 'Yes' ? 'checked' : 'class';
-    $woocities_billing_checked = trim($woocities_billing) == = 'Yes' ? 'checked' : 'class';
+    $woocities_enabled_checked = trim($woocities_enabled) === 'Yes' ? 'checked' : 'class';
+    $woocities_billing_checked = trim($woocities_billing) === 'Yes' ? 'checked' : 'class';
 
     if (array_key_exists('submit', $_POST)) {
         update_option('ahv_woocities_cities', $_POST['woocities_cities']);
