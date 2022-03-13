@@ -24,3 +24,6 @@ node_modules/
 *.sqlite
 
 /error_log
+/.idea/
+/dummy.php
+/error_log
