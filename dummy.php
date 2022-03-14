@@ -15,7 +15,7 @@ foreach ($city_name as $city) {
 
 echo $woocities_cities . '<br>';
 
-echo $city_options;
+// echo $city_options;
 
 
 /**
